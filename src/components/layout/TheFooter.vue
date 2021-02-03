@@ -1,11 +1,13 @@
 <template>
   <footer>
       <p> {{ copyright }} </p>
-      <ul>
+      <div>
+        <ul>
           <li class="main">SOCIAL MEDIA - </li>
           <li><a href=""><i class="fab fa-instagram"></i></a></li>
           <li><a href=""><i class="fab fa-youtube"></i></a></li>
-      </ul>
+        </ul>
+      </div>
   </footer>
 </template>
 
@@ -49,5 +51,25 @@ li{
 a{
     color: #323232;
     font-size: 16px;
+}
+
+@media screen and (max-width: 500px){
+    footer{
+        display: block;
+        text-align: center;
+    }
+    div{
+        display: center;
+        display: grid;
+        place-content: center;
+    }
+    ul{
+        margin-right: 0;
+        display: flex;
+    }
+    p{
+        margin-right: 0;
+        margin-left: 0;
+    }
 }
 </style>
