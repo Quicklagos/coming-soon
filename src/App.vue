@@ -24,12 +24,24 @@ html{
   font-family: 'Open Sans', sans-serif;
   padding: 0;
   margin: 0;
-  background: url('./assets/background.svg');
+  background: url('./assets/background.svg') fixed;
   background-size: 70%;
   background-position: right;
   background-repeat: no-repeat;
   height: 100vh;
   color: #484848;
+}
+
+@media screen and (max-width: 787px){
+    html{
+        background: url('./assets/bg.svg');
+        background-position: right;
+        background-size: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
 }
 
 </style>
