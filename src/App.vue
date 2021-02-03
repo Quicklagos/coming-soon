@@ -28,7 +28,7 @@ html{
   background-position: right;
   background-repeat: no-repeat;
   height: 100vh;
-
+  color: #484848;
 }
 
 </style>
