@@ -65,5 +65,10 @@ button:active {
         width: 108.5%;
     }
 }
+@media screen and (max-width: 320px){
+    button{
+        width: 110%;
+    }
+}
 
 </style>
