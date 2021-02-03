@@ -7,6 +7,10 @@
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
       </ul>
+      <div class="mobile">
+          <i class="fas fa-align-right fa-lg"></i>
+      </div>
+    
   </header>
 </template>
 
@@ -45,5 +49,21 @@ a{
     font-weight: 700;
     font-size: 16px;
     text-transform: uppercase;
+}
+.mobile{
+    display: none;
+}
+
+@media screen and (max-width: 787px){
+    ul{
+        display: none;
+    }
+
+    .mobile{
+        display: block;
+        margin-top: .7em;
+    }
+
+
 }
 </style>

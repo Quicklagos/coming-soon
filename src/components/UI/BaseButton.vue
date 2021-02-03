@@ -35,4 +35,40 @@ button:active {
   opacity: .9;
 }
 
+@media screen and (max-width: 540px){
+    button{
+        width: 105.2%;
+    }
+}
+@media screen and (max-width: 375px){
+    button{
+        width: 108%;
+    }
+}
+@media screen and (max-width: 414px){
+    button{
+        width: 107.3%;
+    }
+}
+@media screen and (max-width: 375px){
+    button{
+        width: 108%;
+    }
+}
+@media screen and (max-width: 375px){
+    button{
+        width: 110%;
+    }
+}
+@media screen and (max-width: 375px){
+    button{
+        width: 108.5%;
+    }
+}
+@media screen and (max-width: 320px){
+    button{
+        width: 110%;
+    }
+}
+
 </style>

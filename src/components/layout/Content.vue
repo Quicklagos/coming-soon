@@ -3,7 +3,7 @@
       <section>
           <h3>COMING SOON</h3>
           <h4>ARE YOU READY?</h4>
-          <p>Don’t get lost in Lagos; get around Lagos faster and quicker using our map, fastest <br> routes, and a lot more.</p>
+          <p>Don’t get lost in Lagos; get around Lagos faster and quicker using our map, fastest <br> routes, discover new places and a lot more.</p>
           <form @submit.prevent="">
               <input type="text" placeholder="Email Address">
               <base-button>NOTIFY ME</base-button>
@@ -38,12 +38,12 @@ h3{
 }
 
 h4{
-    margin-top: -2em;
+    margin-top: -1.5em;
 }
 
 p{
     font-weight: 400;
-    margin-top: -1em;
+    margin-top: -.5em;
 }
 
 img{
@@ -68,4 +68,19 @@ input:focus{
     font-weight: 600;
     color: #484848;
 }
+
+@media screen and (max-width: 787px){
+    section:nth-child(2){
+        display: none;
+    }
+
+
+}
+@media screen and (max-width: 700px){
+    input{
+        width: 100%;
+    }
+
+}
+
 </style>
