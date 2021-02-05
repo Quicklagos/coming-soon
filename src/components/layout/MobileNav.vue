@@ -1,17 +1,35 @@
 <template>
-<div class="mobile-nav">
+<div  v-if="show" @click="tryClose" class="backdrop"></div>
+<aside open v-if="show" class="mobile-nav">
     <ul>
         <h2 class="main">QuickLagos</h2>
         <li><a href="">HOME</a></li>
         <li><a href="">ABOUT</a></li>
         <li><a href="">CONTACT</a></li>
     </ul>
-</div>
+</aside>
 </template>
 
 <script>
 export default {
-
+    data(){
+        return{
+            fixed: {
+            type: Boolean,
+            required: false,
+            default: false,
+            },
+        }
+    },
+    emits: ['close'],
+    methods: {
+    tryClose() {
+      if (this.fixed) {
+        return;
+      }
+      this.$emit('close');
+    },
+  },
 }
 </script>
 
@@ -38,7 +56,7 @@ export default {
     line-height: 2;
 }
 @media screen and (max-width: 500px){
-    div{
+    aside{
         width: 250px !important;
     }
 }
@@ -60,5 +78,14 @@ a{
     color: #707070;
     font-size: 20px;
     font-weight: 700;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(219, 219, 219, 0.75);
+  z-index: 1;
 }
 </style>

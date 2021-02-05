@@ -11,7 +11,7 @@
           <i class="fas fa-align-right fa-lg"></i>
       </div>
   </header>
-  <aside><mobile-nav></mobile-nav></aside>
+  <mobile-nav></mobile-nav>
 </template>
 
 <script>
