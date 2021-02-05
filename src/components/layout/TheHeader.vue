@@ -10,16 +10,18 @@
       <div class="mobile">
           <i class="fas fa-align-right fa-lg"></i>
       </div>
-    
   </header>
+  <aside><mobile-nav></mobile-nav></aside>
 </template>
 
 <script>
 import Logo from '../../assets/logo.svg'
+
 export default {
     data(){
         return{
-            Logo: Logo
+            Logo: Logo,
+            // MobileNav
         }
     }
 }
