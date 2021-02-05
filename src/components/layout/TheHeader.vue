@@ -8,10 +8,10 @@
           <li><a href="#">Contact</a></li>
       </ul>
       <div class="mobile">
-          <i class="fas fa-align-right fa-lg"></i>
+          <i @click="openNav" class="fas fa-align-right fa-lg"></i>
       </div>
   </header>
-  <mobile-nav></mobile-nav>
+  <mobile-nav :show="open"></mobile-nav>
 </template>
 
 <script>
@@ -21,7 +21,11 @@ export default {
     data(){
         return{
             Logo: Logo,
-            // MobileNav
+        }
+    },
+    methods: {
+        openNav(){
+            console.info('open nav')
         }
     }
 }

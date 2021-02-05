@@ -1,6 +1,6 @@
 <template>
 <div  v-if="show" @click="tryClose" class="backdrop"></div>
-<aside open v-if="show" class="mobile-nav">
+<aside v-if="show" class="mobile-nav">
     <ul>
         <h2 class="main">QuickLagos</h2>
         <li><a href="">HOME</a></li>
@@ -19,6 +19,7 @@ export default {
             required: false,
             default: false,
             },
+            show: false
         }
     },
     emits: ['close'],
