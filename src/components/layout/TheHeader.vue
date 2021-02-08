@@ -42,6 +42,13 @@ export default {
         closeNav(){
             this.nav = false
         }
+    },
+    watch: {
+        '$route' (to, from){
+            if(to, from){
+             this.nav = false
+            }
+        }
     }
 }
 </script>
