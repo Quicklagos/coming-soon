@@ -8,10 +8,10 @@
           <li><a href="#">Contact</a></li>
       </ul>
       <div class="mobile">
-          <i @click="openNav" class="fas fa-align-right fa-lg"></i>
+          <i class="fas fa-align-right fa-lg" @click="openNav"></i>
       </div>
   </header>
-  <mobile-nav :show="open"></mobile-nav>
+  <mobile-nav v-if="nav"></mobile-nav>
 </template>
 
 <script>
@@ -21,11 +21,12 @@ export default {
     data(){
         return{
             Logo: Logo,
+            nav: false
         }
     },
     methods: {
         openNav(){
-            console.info('open nav')
+            this.nav = true
         }
     }
 }
@@ -59,6 +60,7 @@ a{
 .mobile{
     display: none;
 }
+
 
 @media screen and (max-width: 787px){
     ul{

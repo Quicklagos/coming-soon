@@ -1,6 +1,6 @@
 <template>
-<div  v-if="show" @click="tryClose" class="backdrop"></div>
-<aside v-if="show" class="mobile-nav">
+<div class="backdrop"></div>
+<aside class="mobile-nav">
     <ul>
         <h2 class="main">QuickLagos</h2>
         <li><a href="">HOME</a></li>
@@ -14,23 +14,9 @@
 export default {
     data(){
         return{
-            fixed: {
-            type: Boolean,
-            required: false,
-            default: false,
-            },
-            show: false
+            // 
         }
     },
-    emits: ['close'],
-    methods: {
-    tryClose() {
-      if (this.fixed) {
-        return;
-      }
-      this.$emit('close');
-    },
-  },
 }
 </script>
 
@@ -79,14 +65,5 @@ a{
     color: #707070;
     font-size: 20px;
     font-weight: 700;
-}
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  background-color: rgba(219, 219, 219, 0.75);
-  z-index: 1;
 }
 </style>
