@@ -13,8 +13,18 @@ export default {
   name: 'App',
   components: {
     TheContent
+  },
+  data(){
+    return{
+      isLoading: true,
+      show: false
+    }
+  },
+  beforeCreate(){
+    setTimeout(function(){
+      console.log('Hello World')
+    },3000)
   }
-
 }
 </script>
 
