@@ -8,18 +8,33 @@
           <li><a href="#">Contact</a></li>
       </ul>
       <div class="mobile">
-          <i class="fas fa-align-right fa-lg"></i>
+          <i class="fas fa-align-right fa-lg" @click="openNav"></i>
       </div>
-    
   </header>
+  <transition name="navigation">
+      <div>
+        <aside @click="closeNav" v-if="nav" class="backdrop"></aside>
+        <mobile-nav v-if="nav"></mobile-nav>
+      </div>
+  </transition>
 </template>
 
 <script>
 import Logo from '../../assets/logo.svg'
+
 export default {
     data(){
         return{
-            Logo: Logo
+            Logo: Logo,
+            nav: false
+        }
+    },
+    methods: {
+        openNav(){
+            this.nav = true
+        },
+        closeNav(){
+            this.nav = false
         }
     }
 }
@@ -54,6 +69,16 @@ a{
     display: none;
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(219, 219, 219, 0.75);
+  z-index: 1;
+}
+
 @media screen and (max-width: 787px){
     ul{
         display: none;
@@ -63,7 +88,6 @@ a{
         display: block;
         margin-top: .7em;
     }
-
-
 }
+
 </style>

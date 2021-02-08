@@ -3,7 +3,7 @@
       <section>
           <h3>COMING SOON</h3>
           <h4>ARE YOU READY?</h4>
-          <p>Don’t get lost in Lagos; get around Lagos faster and quicker using our map, fastest <br> routes, discover new places and a lot more.</p>
+          <p>Don’t get lost in Lagos; get around Lagos faster and quicker using our map, fastest routes, discover new places and a lot more.</p>
           <form @submit.prevent="">
               <input type="text" placeholder="Email Address">
               <base-button>NOTIFY ME</base-button>
@@ -28,7 +28,8 @@ export default {
 
 <style scoped>
 div{
-    padding: 2em;
+    padding-right: 2em !important;
+    padding-left: 2em;
     display: flex;
 }
 
@@ -77,6 +78,9 @@ input:focus{
 
 }
 @media screen and (max-width: 700px){
+    form{
+        padding-right: 2em !important;
+    }
     input{
         width: 100%;
     }

@@ -27,7 +27,7 @@ footer{
     font-size: 12px;
     font-weight: 600;
     display: flex;
-    padding: 2em 1.5em 0 1.5em;
+    padding: 6em 1.5em 0 1.5em;
     justify-content: space-between;
     -webkit-box-pack: justify;
 }
