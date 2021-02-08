@@ -1,13 +1,12 @@
 <template>
-<div class="backdrop"></div>
-<aside class="mobile-nav">
+<div class="mobile-nav">
     <ul>
         <h2 class="main">QuickLagos</h2>
         <li><a href="">HOME</a></li>
         <li><a href="">ABOUT</a></li>
         <li><a href="">CONTACT</a></li>
     </ul>
-</aside>
+</div>
 </template>
 
 <script>
@@ -43,7 +42,7 @@ export default {
     line-height: 2;
 }
 @media screen and (max-width: 500px){
-    aside{
+    div{
         width: 250px !important;
     }
 }
@@ -66,4 +65,5 @@ a{
     font-size: 20px;
     font-weight: 700;
 }
+
 </style>
