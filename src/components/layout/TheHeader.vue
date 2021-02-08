@@ -4,25 +4,31 @@
           <img :src="Logo" alt="QuickLagos Logo">
       </div>
       <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
+          <li>
+              <router-link to="/about">About</router-link>
+          </li>
+          <li>
+              <router-link to="/contact">Contact</router-link>
+          </li>
       </ul>
       <div class="mobile">
           <i class="fas fa-align-right fa-lg" @click="openNav"></i>
       </div>
   </header>
-  <transition name="navigation">
       <div>
         <aside @click="closeNav" v-if="nav" class="backdrop"></aside>
         <mobile-nav v-if="nav"></mobile-nav>
       </div>
-  </transition>
 </template>
 
 <script>
 import Logo from '../../assets/logo.svg'
+import MobileNav from './MobileNav.vue'
 
 export default {
+    components: {
+        MobileNav
+    },
     data(){
         return{
             Logo: Logo,
