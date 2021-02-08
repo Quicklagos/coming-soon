@@ -2,9 +2,9 @@
 <div class="mobile-nav">
     <ul>
         <h2 class="main">QuickLagos</h2>
-        <li><a href="">HOME</a></li>
-        <li><a href="">ABOUT</a></li>
-        <li><a href="">CONTACT</a></li>
+        <li><router-link to="/">HOME</router-link></li>
+        <li><router-link to="/about">ABOUT</router-link></li>
+        <li><router-link to="/contact">CONTACT</router-link></li>
     </ul>
 </div>
 </template>

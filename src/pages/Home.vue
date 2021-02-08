@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Illustration from '../../assets/illustration.svg'
+import Illustration from '../assets/illustration.svg'
 export default {
     data(){
         return{

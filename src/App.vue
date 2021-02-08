@@ -1,29 +1,20 @@
 <template>
   <div>
     <the-header></the-header>
-    <the-content></the-content>
+    <router-view />
     <the-footer></the-footer>
   </div>
 </template>
 
 <script>
-import TheContent from './components/layout/Content.vue'
+import TheHeader from './components/layout/TheHeader.vue'
+import TheFooter from './components/layout/TheFooter.vue'
 
 export default {
   name: 'App',
   components: {
-    TheContent
-  },
-  data(){
-    return{
-      isLoading: true,
-      show: false
-    }
-  },
-  beforeCreate(){
-    setTimeout(function(){
-      console.log('Hello World')
-    },3000)
+    TheHeader,
+    TheFooter
   }
 }
 </script>
