@@ -1,12 +1,20 @@
 <template>
   <div>
       <section>
-          <h3>COMING SOON</h3>
+          <h3>COMING SOON 👋🏾</h3>
           <h4>ARE YOU READY?</h4>
           <p>Don’t get lost in Lagos; get around Lagos faster and quicker using our map, fastest routes, discover new places and a lot more.</p>
           <form @submit.prevent="">
-              <input type="text" placeholder="Email Address">
-              <base-button>NOTIFY ME</base-button>
+              <input 
+                type="text" 
+                placeholder="Email Address" 
+                v-model.trim="email"
+              >
+              <base-button @click="checkInput">NOTIFY ME 
+                <i v-if="isLoading" class="fas fa-circle-notch fa-spin"></i>
+              </base-button>
+              <br>
+              <span v-if="!isValid" class="error">Email is not valid!</span>
           </form>
       </section>
       <section>
@@ -20,7 +28,43 @@ import Illustration from '../assets/illustration.svg'
 export default {
     data(){
         return{
-            Illustration: Illustration
+            Illustration: Illustration,
+            email:'',
+            isValid: true,
+            isLoading: false
+        }
+    },
+    methods: {
+         checkInput(){
+            this.isValid = true
+            if(this.email === '' || !this.email.includes('@')){
+                this.isValid = false
+                return
+            }
+            this.isLoading = true
+
+            fetch('https://quicklagos-b401e-default-rtdb.firebaseio.com/email.json',{
+                method: 'POST',
+                header: {
+                    'Content-Type': 'application-json'
+                },
+                body: JSON.stringify({
+                    id: Math.round(Math.random() * 100000),
+                    email: this.email
+                })
+            }).then(response => {
+                if(response.ok){ 
+                    setTimeout( () => {
+                        this.isLoading = false
+                        console.log('Request sent successfully')
+
+                    }, 3000)
+                }else{
+                    throw new Error('Error sending request')
+                }
+            })
+            this.email = ''
+            
         }
     }
 }
@@ -70,6 +114,10 @@ input:focus{
     color: #484848;
 }
 
+.error{
+    color: rgb(204, 51, 51);
+}
+
 @media screen and (max-width: 787px){
     section:nth-child(2){
         display: none;
@@ -83,6 +131,12 @@ input:focus{
     }
     input{
         width: 100%;
+    }
+
+}
+@media screen and (max-width: 360px){
+    h3{
+       font-size: 1.7em;
     }
 
 }
