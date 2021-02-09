@@ -5,8 +5,10 @@
           <h4>ARE YOU READY?</h4>
           <p>Don’t get lost in Lagos; get around Lagos faster and quicker using our map, fastest routes, discover new places and a lot more.</p>
           <form @submit.prevent="">
-              <input type="text" placeholder="Email Address">
-              <base-button>NOTIFY ME</base-button>
+              <input type="text" placeholder="Email Address" v-model.trim="email">
+              <base-button @click="checkInput">NOTIFY ME</base-button>
+              <br>
+              <span v-if="!isValid" class="error">Email is not valid!</span>
           </form>
       </section>
       <section>
@@ -20,7 +22,18 @@ import Illustration from '../assets/illustration.svg'
 export default {
     data(){
         return{
-            Illustration: Illustration
+            Illustration: Illustration,
+            email:'',
+            isValid: true
+        }
+    },
+    methods: {
+        checkInput(){
+            this.isValid = true
+            if(this.email === '' || !this.email.includes('@')){
+                this.isValid = false
+                return
+            }
         }
     }
 }
@@ -68,6 +81,10 @@ input:focus{
 ::placeholder{
     font-weight: 600;
     color: #484848;
+}
+
+.error{
+    color: rgb(204, 51, 51);
 }
 
 @media screen and (max-width: 787px){
