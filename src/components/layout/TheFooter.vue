@@ -4,8 +4,8 @@
       <div>
         <ul>
           <li class="main">SOCIAL MEDIA - </li>
-          <li><a href=""><i class="fab fa-instagram"></i></a></li>
-          <li><a href=""><i class="fab fa-youtube"></i></a></li>
+          <li><a href="https://instagram.com/QuickLagos"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://youtube.com/QuickLagos"><i class="fab fa-youtube"></i></a></li>
         </ul>
       </div>
   </footer>
